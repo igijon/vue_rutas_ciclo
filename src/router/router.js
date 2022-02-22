@@ -1,13 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import ListPage from '@/modules/pokemon/pages/ListPage'
-import PokemonPage from '@/modules/pokemon/pages/PokemonPage'
-import NoPageFound from '@/modules/shared/pages/NoPageFound'
 
 const routes = [
     {
         path: '/', 
-        component: ListPage
+        component: () => import(/* webpackChunkName: "ListPage"*/ '../modules/pokemon/pages/ListPage') //Lazy Load
     },
     {
         path: '/about', 
@@ -15,11 +12,11 @@ const routes = [
     },
     {
         path: '/id', 
-        component: PokemonPage
+        component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage') //Lazy Load
     },
     {
         path: '/:pathMatch(.*)*', 
-        component: NoPageFound
+        component: () => import(/* webpackChunkName: "NoPageFound"*/ '../modules/shared/pages/NoPageFound') //Lazy Load
     }, //Cualquier URL que no haga match con las anteriores mostraré un 404Page
 
 ]
