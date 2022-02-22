@@ -11,7 +11,7 @@ const routes = [
     },
     {
         path: '/about', 
-        component: () => import('../modules/pokemon/pages/AboutPage') //Lazy Load
+        component: () => import(/* webpackChunkName: "AboutPage"*/ '../modules/pokemon/pages/AboutPage') //Lazy Load
     },
     {
         path: '/id', 
