@@ -10,7 +10,7 @@ import Navbar from './modules/shared/components/Navbar.vue'
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar: () => import(/* webpackChunkName "NavBar"*/ '@/modules/shared/components/Navbar')
   }
 }
 </script>
