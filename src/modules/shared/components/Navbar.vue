@@ -1,9 +1,9 @@
 <template>
   <div>
-      <a href="/">Pokemon List</a>
-      <a href="/id">Pokemon por id</a>
-      <a href="/about">About</a>
-      <!--Aún no funciona y recarga todo ... paciencia-->
+      <router-link to="/">Pokemon List</router-link>
+      <router-link to="/id">Pokemon por id</router-link>
+      <router-link to="/about">About</router-link>
+      <!--Con vue router no usa a, usa router-link-->
   </div>
 </template>
 
