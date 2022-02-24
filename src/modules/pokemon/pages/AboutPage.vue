@@ -5,7 +5,7 @@
     -->
     <h1>About Page</h1>
     <hr>
-    <!-- <h2>{{ name }}</h2> -->
+    <h2>{{ name }}</h2>
     <button @click="onChangeName">
         Cambiar nombre
     </button>
@@ -30,6 +30,10 @@ export default {
         }
     },
     beforeCreate() {
+        /*Aquí no debemos hacer las peticiones http para renderizar en el componente
+        porque aún no se ha creado el componente, por lo tanto la data no se ha creado
+        y cuando se crea se sobreescriben los valores*/
+        this.name = 'Juan Carlos' //No se visualiza
         console.log('beforeCreate')
     },
     created() {
