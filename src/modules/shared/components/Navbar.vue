@@ -30,8 +30,9 @@ div a {
     margin: 0 10px;
 }
 
-div .router-link-exact-active {
-    /*Esta clase se activa cuando el link está activo */
+a.router-link-exact-active {
+    /*Esta clase se activa cuando el link está activo 
+    También funciona con a porque es lo que termina traduciendo*/
     color: #42b983;
 }
 </style>
