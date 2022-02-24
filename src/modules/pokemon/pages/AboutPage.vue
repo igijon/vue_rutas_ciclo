@@ -37,6 +37,7 @@ export default {
         console.log('beforeCreate')
     },
     created() {
+        this.name = 'Juan Carlos'
         console.log('created')
     },
     beforeMount() {
