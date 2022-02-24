@@ -24,6 +24,7 @@ export default {
         onChangeName() {
             console.log('Se cambiará el nombre a Melissa')
             this.name = 'Melisa'
+            console.log(this.name)
         }
     },
     beforeCreate() {
