@@ -30,4 +30,8 @@ div a {
     margin: 0 10px;
 }
 
+div .router-link-exact-active {
+    /*Esta clase se activa cuando el link está activo */
+    color: #42b983;
+}
 </style>
