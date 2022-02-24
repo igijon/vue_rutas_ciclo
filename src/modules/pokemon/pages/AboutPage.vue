@@ -4,11 +4,27 @@
         https://vuejs.org/guide/essentials/application.html#lifecycle-diagram
     -->
     <h1>About Page</h1>
+    <hr>
+    <h2>{{ name }}</h2>
+    <button @click="onChangeName">
+        Cambiar nombre
+    </button>
 </template>
 
 <script>
 
 export default {
+
+    data(){
+        return {
+            name: 'Fernando'
+        }
+    },
+    methods: {
+        onChangeName() {
+            this.name = 'Melisa'
+        }
+    },
     beforeCreate() {
         console.log('beforeCreate')
     },
