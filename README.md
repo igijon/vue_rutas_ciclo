@@ -23,3 +23,7 @@ Elección manual de vue 3.x
 Única opción => Babel
 Ficheros de configuración dedicados
 No guardar configuración
+
+### Router
+
+See [Vue Router](https://router.vuejs.org/)
