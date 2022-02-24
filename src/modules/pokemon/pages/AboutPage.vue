@@ -25,6 +25,8 @@ export default {
             console.log('Se cambiará el nombre a Melissa')
             this.name = 'Melisa'
             console.log(this.name)
+            //Con el watch detectaríamos los cambis en las propiedades, con el 
+            //ciclo de vida detectamos los cambios en el componente
         }
     },
     beforeCreate() {
