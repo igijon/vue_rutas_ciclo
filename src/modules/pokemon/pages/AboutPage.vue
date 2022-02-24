@@ -37,6 +37,8 @@ export default {
         console.log('beforeCreate')
     },
     created() {
+        /*Aquí podemos realizar peticiones http, tenemos referencia del componente
+        y tenemos la data */
         this.name = 'Juan Carlos'
         console.log('created')
     },
