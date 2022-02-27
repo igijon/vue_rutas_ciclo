@@ -1,5 +1,5 @@
 <template>
-    <h1>Pokemon <span>#{{ id }}</span></h1>
+    <h1>Pokemon <span>#{{ $route.params.id }}</span></h1>
 </template>
 <script>
 
@@ -7,10 +7,10 @@ export default {
     props: {
         //Vamos a ver la alternativa de tener id como propiedad en el componente en lugar
         //de como parámetro.
-        id: {
+        /*id: {
             type: Number,
             required: true
-        }
+        }*/
     },
     data(){
         return {
