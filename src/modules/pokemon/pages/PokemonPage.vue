@@ -10,6 +10,10 @@ export default {
         id: {
             type: Number,
             required: true
+        },
+        nombre: {
+            type: String
+            /*Con esto nombre deja de ser un attr aunque sigan siendo reactivos */
         }
     },
     data(){
@@ -17,6 +21,7 @@ export default {
         }
     },
     created(){
+        /*La impresión de los atributos sale así porque son reactivas */
         console.log(this.$attrs)
     }
 }
