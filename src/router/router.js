@@ -18,7 +18,8 @@ const routes = [
             console.log(route);
             /*Con esto tengo acceso a toda la ruta, puedo hacer y deshacer y lo que ponga que retorno
             son las propiedades que voy a mandar al componente y desaparece el warning
-            que indicaba que faltaba el 100*/
+            que indicaba que faltaba el 100.
+            Nombre y apellido saldrá como attr porque no ha sido establecido como property*/
             return {
                 id: 100,
                 nombre: 'Inma',
