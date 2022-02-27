@@ -38,6 +38,11 @@ export default {
                 console.log('No existe ese pokemon')
             }
         }
+    },
+    watch: {
+        id() {
+            console.log(this.id)
+        }
     }
 }
 </script>
