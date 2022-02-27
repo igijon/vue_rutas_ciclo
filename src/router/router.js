@@ -15,10 +15,13 @@ const routes = [
         name: 'pokemon-id', /*podemos establecer un nombre para la ruta */
         component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage'), //Lazy Load
         props: ( route ) => {
-            const { id } = route.params
-            return {
-                id
-            }
+            const id  = Number(route.params.id)
+            return isNaN( id ) ? { id: 1 } : { id }
+                /*Esperaba un número y tenía un string, tenemos que hacer una validación
+                intentando hacer una conversión 
+                Si introduzco un valor no válido en la ruta porque no sea un entero
+                el valor que tomará id en este caso será 1*/
+                
         } 
     },
     {
