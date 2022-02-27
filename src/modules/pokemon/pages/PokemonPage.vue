@@ -22,10 +22,13 @@ export default {
         //en mounted pero lo mejor es aquí porque ya está montado y creado y se puede
         //manipular
         this.getPokemon()
+        /*Tal cual lo tenemos si no pulsamos dos veces intro aunque cambiemos
+        en la ruta el id no pasa nada porque el componente ya está creado y se está llamando
+        cuando se crea */
     },
     methods: {
         async getPokemon() {
-            const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/ditto`).then( r => r.json() );
+            const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`).then( r => r.json() );
             console.log(pokemon)
             this.pokemon = pokemon
         }
