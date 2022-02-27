@@ -7,20 +7,16 @@ export default {
     props: {
         //Vamos a ver la alternativa de tener id como propiedad en el componente en lugar
         //de como parámetro.
-        /*id: {
+        id: {
             type: Number,
             required: true
-        }*/
+        }
     },
     data(){
         return {
-            id: this.$route.params.id
         }
     },
     created(){
-        //const { id } = this.$route.params
-        //console.log(id)
-        //this.id = id
     }
 }
 </script>

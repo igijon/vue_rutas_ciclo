@@ -13,7 +13,10 @@ const routes = [
     {
         path: '/:id', //Los : indican que va a ser un parámetro de nombre id
         name: 'pokemon-id', /*podemos establecer un nombre para la ruta */
-        component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage') //Lazy Load
+        component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage'), //Lazy Load
+        props: ( route ) => {
+            console.log(route);
+        } 
     },
     {
         path: '/:pathMatch(.*)*', 
