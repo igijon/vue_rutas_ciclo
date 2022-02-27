@@ -10,10 +10,6 @@ export default {
         id: {
             type: Number,
             required: true
-        },
-        nombre: {
-            type: String
-            /*Con esto nombre deja de ser un attr aunque sigan siendo reactivos */
         }
     },
     data(){
