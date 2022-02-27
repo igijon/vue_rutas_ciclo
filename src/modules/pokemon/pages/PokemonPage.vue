@@ -41,7 +41,7 @@ export default {
     },
     watch: {
         id() {
-            console.log(this.id)
+            this.getPokemon()
         }
     }
 }
