@@ -14,11 +14,21 @@ export default {
     },
     data(){
         return {
+            pokemon: null
         }
     },
     created(){
-        /*La impresión de los atributos sale así porque son reactivas */
-        console.log(this.$attrs)
+        //Los métodos de peticiones http deben hacerse aquí, también podrían hacerse
+        //en mounted pero lo mejor es aquí porque ya está montado y creado y se puede
+        //manipular
+        this.getPokemon()
+    },
+    methods: {
+        async getPokemon() {
+            const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/ditto`).then( r => r.json() );
+            console.log(pokemon)
+            this.pokemon = pokemon
+        }
     }
 }
 </script>
