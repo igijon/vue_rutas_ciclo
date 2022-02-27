@@ -28,9 +28,15 @@ export default {
     },
     methods: {
         async getPokemon() {
-            const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`).then( r => r.json() );
-            console.log(pokemon)
-            this.pokemon = pokemon
+            try {
+                const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`).then( r => r.json() );
+                console.log(pokemon)
+                this.pokemon = pokemon
+            } catch( error ) {
+                /*push mantiene la historia y me permite navegar a otra página */
+                this.$router.push('/')
+                console.log('No existe ese pokemon')
+            }
         }
     }
 }

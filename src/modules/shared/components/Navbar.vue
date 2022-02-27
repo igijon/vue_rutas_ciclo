@@ -1,7 +1,7 @@
 <template>
   <div>
       <router-link to="/">Pokemon List</router-link>
-      <router-link to="/id">Pokemon por id</router-link>
+      <router-link to="/10">Pokemon por id</router-link>
       <router-link to="/about">About</router-link>
       <!--Con vue router no usa a, usa router-link
       aunque en el navegador web lo termina traduciendo a "a"
