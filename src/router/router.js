@@ -28,8 +28,9 @@ const routes = [
     },
     {
         path: '/:pathMatch(.*)*', 
-        component: () => import(/* webpackChunkName: "NoPageFound"*/ '../modules/shared/pages/NoPageFound') //Lazy Load
-    }, //Cualquier URL que no haga match con las anteriores mostraré un 404Page
+        //component: () => import(/* webpackChunkName: "NoPageFound"*/ '../modules/shared/pages/NoPageFound') //Lazy Load
+        redirect: '/home'
+    }, 
 
 ]
 
