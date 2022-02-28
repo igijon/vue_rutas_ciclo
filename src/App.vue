@@ -1,7 +1,7 @@
 <template>
   <Navbar/>
   <img alt="Vue logo" src="./assets/logo.png">
-  <router-view />
+  <router-view /> <!-- Este es el sistema de rutas principal -->
 </template>
 
 <script>
