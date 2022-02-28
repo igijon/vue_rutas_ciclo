@@ -1,7 +1,13 @@
 <template>
   <a v-if="isExternalLink"
+  target="_blank"
   :href="link.to">{{ link.name }}</a>
   <!--Ahora sólo vemos el de Google porque es el único que tiene Http-->
+
+  <router-link v-else
+      :to="link.to">
+      {{ link.name }}
+  </router-link>
 </template>
 
 <script>

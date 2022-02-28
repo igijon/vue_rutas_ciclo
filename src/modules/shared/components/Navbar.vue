@@ -19,7 +19,7 @@ export default {
         return {
             links: [
                 { to: '/', name: 'Pokemons'},
-                { to: '/50', name: 'Por ID'},
+                { to: '/pokemonid/50', name: 'Por ID'},
                 { to: '/about', name: 'About'},
                 { to: 'https://google.com', name: 'Google'}
             ]
