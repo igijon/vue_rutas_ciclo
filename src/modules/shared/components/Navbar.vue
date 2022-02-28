@@ -1,10 +1,10 @@
 <template>
   <div>
-      <router-link to="/">Pokemon List</router-link>
+      <router-link :to="{ name: 'home'}">Pokemon List</router-link>
       <router-link :to="{ name: 'pokemon-id', params: {id: '20'}}">Pokemon por id</router-link>
       <!--Documentación del to
       https://router.vuejs.org/api/#to -->
-      <router-link to="/about">About</router-link>
+      <router-link :to="{ name: 'about'}">About</router-link>
       <!--Con vue router no usa a, usa router-link
       aunque en el navegador web lo termina traduciendo a "a"
       Para que las clases de estilos sólo se apliquen a los elementos

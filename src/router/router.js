@@ -5,15 +5,16 @@ const routes = [
     {
         path: '/',
         redirect: '/home'
-        /*Aunque haga esto si pongo la / y doy intro no coge la clase, no se pone
-        el link verde como activo */
+        /*Poniendo los nombres tengo más control*/
     },
     {
         path: '/home', 
+        name: 'home',
         component: () => import(/* webpackChunkName: "ListPage"*/ '../modules/pokemon/pages/ListPage') //Lazy Load
     },
     {
-        path: '/about', 
+        path: '/about',
+        name: 'about', 
         component: () => import(/* webpackChunkName: "AboutPage"*/ '../modules/pokemon/pages/AboutPage') //Lazy Load
     },
     {
