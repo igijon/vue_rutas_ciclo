@@ -80,4 +80,27 @@ const router = createRouter({
     routes
 })
 
+/**Creación de un guard global síncrono
+ * 
+ * https://router.vuejs.org/guide/advanced/navigation-guards.html
+ * 
+ */
+router.beforeEach((to, from, next) => {
+    console.log(to, from, next)
+
+    const random = Math.random() * 100
+    
+    //Voy a hacer lógica aleatoria para hacer funcionar el guard
+    //Si el random es mayor de 50 le dejaré pasar
+    //Podemos navegar en el navbar y a veces no dejará pasar y mandará al
+    //pokemon-home
+    if ( random > 50 ) {
+        console.log('Auntenticado')
+        next()
+    } else {
+        console.log( random, 'Bloqueado por el beforeEach Guard')
+        next({name: 'pokemon-home'})
+    }
+
+})
 export default router
