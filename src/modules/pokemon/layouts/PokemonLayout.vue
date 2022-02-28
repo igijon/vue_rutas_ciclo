@@ -1,7 +1,8 @@
 <template>
   <div class="pokemon-layout">
       <h1>Pokemon Layout</h1>
-      <!--Esto va a estar en todas las páginas de pokemon-->
+      <!-- Vamos a tener rutas hijas que vamos a renderizar aquí dentro -->
+      <router-view></router-view>
   </div>
 </template>
 
