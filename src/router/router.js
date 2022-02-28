@@ -11,7 +11,9 @@ const routes = [
         component: () => import(/* webpackChunkName: "AboutPage"*/ '../modules/pokemon/pages/AboutPage') //Lazy Load
     },
     {
-        path: '/:id', //Los : indican que va a ser un parámetro de nombre id
+        /*Si cambio la ruta sigue funcionando, porque lo que estoy utilizando
+        en nabvar es el name */
+        path: '/pokemonid/:id', //Los : indican que va a ser un parámetro de nombre id
         name: 'pokemon-id', /*podemos establecer un nombre para la ruta */
         component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage'), //Lazy Load
         props: ( route ) => {
