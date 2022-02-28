@@ -1,18 +1,17 @@
 <template>
   <a v-if="isExternalLink"
   target="_blank"
-  :class=" isActive ? 'is-active': 'normal-link'"
+  class="normal-link"
   :href="link.to">{{ link.name }}</a>
-  <!--Ahora sólo vemos el de Google porque es el único que tiene Http-->
 
   <router-link v-else
-      :to="link.to"
-      v-slot="{ href, isActive }"
+      :to="{ name: link.to, params: {id: link.id}}"
+      v-slot="{ isActive }"
       >
-      <a :href="href" :class=" isActive ? 'is-active': 'normal-link'">
+      <a :class=" isActive ? 'is-active': 'normal-link'">
           {{ link.name }}
         </a>
-      <!--quiero que a apunte a lo que expone el routerlink mediante v-slot -->
+    
   </router-link>
 </template>
 
