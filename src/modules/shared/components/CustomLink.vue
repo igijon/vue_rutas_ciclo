@@ -5,8 +5,10 @@
   <!--Ahora sólo vemos el de Google porque es el único que tiene Http-->
 
   <router-link v-else
-      :to="link.to">
-      {{ link.name }}
+      :to="link.to"
+      v-slot="{}"
+      >
+      <a href="">Nuevo link</a>
   </router-link>
 </template>
 
