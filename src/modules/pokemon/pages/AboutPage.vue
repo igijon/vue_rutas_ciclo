@@ -33,13 +33,12 @@ export default {
         /*Aquí no debemos hacer las peticiones http para renderizar en el componente
         porque aún no se ha creado el componente, por lo tanto la data no se ha creado
         y cuando se crea se sobreescriben los valores*/
-        this.name = 'Juan Carlos' //No se visualiza
+        this.name = 'Inma Gijón' //No se visualiza
         console.log('beforeCreate')
     },
     created() {
-        /*Aquí podemos realizar peticiones http, tenemos referencia del componente
-        y tenemos la data */
-        this.name = 'Juan Carlos'
+        /*No conozco a ningún JC como tenía antes*/
+        this.name = 'Inma Gijón'
         console.log('created')
     },
     beforeMount() {

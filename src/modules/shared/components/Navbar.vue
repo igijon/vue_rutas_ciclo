@@ -1,25 +1,27 @@
 <template>
   <div>
-      <router-link :to="{ name: 'home'}">Pokemon List</router-link>
-      <router-link :to="{ name: 'pokemon-id', params: {id: '20'}}">Pokemon por id</router-link>
-      <!--Documentación del to
-      https://router.vuejs.org/api/#to -->
-      <router-link :to="{ name: 'about'}">About</router-link>
-      <!--Con vue router no usa a, usa router-link
-      aunque en el navegador web lo termina traduciendo a "a"
-      Para que las clases de estilos sólo se apliquen a los elementos
-      de los componentes, cuando se renderiza (en el html lo podemos ver)
-      se les asigna un hash para que no se apliquen a todo. Si quitamos el
-      scoped sí se aplica a todo.-->
+      <!--Si quiero tener más control sobre el routerling-->
+      <CustomLink/>
   </div>
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
+import CustomLink from './CustomLink.vue'
+/**Funcionaría también si lo importamos del core, pero lo vamos a dejar así
+ */
 export default {
-
+    /**Cuando tenemos dos o tres componentes ya se puede hacer recomendable
+     * tener lazy load
+     */
+    components: {
+        /**Le ponemos el nombre al componente que queramos dentro de este archivo */
+        CustomLink: defineAsyncComponent(() => import('./CustomLink.vue'))
+    }
 }
 </script>
 
+        CustomLink
 <style scoped>
 
 div {
@@ -32,9 +34,4 @@ div a {
     margin: 0 10px;
 }
 
-a.router-link-exact-active {
-    /*Esta clase se activa cuando el link está activo 
-    También funciona con a porque es lo que termina traduciendo*/
-    color: #42b983;
-}
 </style>
