@@ -80,27 +80,25 @@ const router = createRouter({
     routes
 })
 
-/**Creación de un guard global síncrono => En el commit hay error SINCRONO
- * 
- * https://router.vuejs.org/guide/advanced/navigation-guards.html
- * 
- */
-router.beforeEach((to, from, next) => {
-    console.log(to, from, next)
+/** Creación de un guard asíncrono */
+const canAccess = () => {
+    return new Promise( resolve => {
+        const random = Math.random() * 100
+        if (random > 50) {
+            console.log('Autenticado - canAccess')
+            resolve(true)
+        }
+        else {
+            console.log( random, 'Bloqueado por el beforeEach Guard- canAccess')
+            resolve(false)
+        }
+    })
+}
 
-    const random = Math.random() * 100
-    
-    //Voy a hacer lógica aleatoria para hacer funcionar el guard
-    //Si el random es mayor de 50 le dejaré pasar
-    //Podemos navegar en el navbar y a veces no dejará pasar y mandará al
-    //pokemon-home
-    if ( random > 50 ) {
-        console.log('Auntenticado')
-        next()
-    } else {
-        console.log( random, 'Bloqueado por el beforeEach Guard')
-        next({name: 'pokemon-home'})
-    }
+router.beforeEach( async(to, from, next) => {
+    const authorized = await canAccess()
 
+    authorized ? next() : next({name: 'pokemon-home'})
 })
+
 export default router
