@@ -1,7 +1,11 @@
 <template>
   <div>
       <!--Si quiero tener más control sobre el routerling-->
-      <CustomLink/>
+      <CustomLink
+        v-for="link in links" :key="link.to" :link="link"
+        
+      />
+      <!--Sólo puedo usar el to porque es único-->
   </div>
 </template>
 
@@ -11,6 +15,16 @@ import CustomLink from './CustomLink.vue'
 /**Funcionaría también si lo importamos del core, pero lo vamos a dejar así
  */
 export default {
+    data() {
+        return {
+            links: [
+                { to: '/', name: 'Pokemons'},
+                { to: '/50', name: 'Por ID'},
+                { to: '/about', name: 'About'},
+                { to: 'https://google.com', name: 'Google'}
+            ]
+        }
+    },
     /**Cuando tenemos dos o tres componentes ya se puede hacer recomendable
      * tener lazy load
      */
