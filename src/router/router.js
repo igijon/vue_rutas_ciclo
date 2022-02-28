@@ -14,25 +14,34 @@ const routes = [
         children: [
             {
                 path: 'home', 
-                name: 'home',
-                component: () => import(/* webpackChunkName: "ListPage"*/ '../modules/pokemon/pages/ListPage') //Lazy Load
+                name: 'pokemon-home',
+                component: () => import(/* webpackChunkName: "ListPage"*/ '@/modules/pokemon/pages/ListPage') //Lazy Load
             },
             {
                 path: 'about',
-                name: 'about', 
-                component: () => import(/* webpackChunkName: "AboutPage"*/ '../modules/pokemon/pages/AboutPage') //Lazy Load
+                name: 'pokemon-about', 
+                component: () => import(/* webpackChunkName: "AboutPage"*/ '@/modules/pokemon/pages/AboutPage') //Lazy Load
             },
             {
                 
                 path: 'pokemonid/:id', 
                 name: 'pokemon-id', 
-                component: () => import(/* webpackChunkName: "PokemonPage"*/ '../modules/pokemon/pages/PokemonPage'), //Lazy Load
+                component: () => import(/* webpackChunkName: "PokemonPage"*/ '@/modules/pokemon/pages/PokemonPage'), //Lazy Load
                 props: ( route ) => {
                     const id  = Number(route.params.id)
                     return isNaN( id ) ? { id: 1 } : { id }
                         
                 } 
             },
+            {
+                path: '',
+                redirect: {
+                    name: 'pokemon-about'
+                }
+                /**Si introuzco la dirección completamente vacía me voy al about, 
+                 * pero he perdido la barra de navegación completa
+                 */
+            }
         ]
     },
     {
