@@ -80,7 +80,7 @@ const router = createRouter({
     routes
 })
 
-/**Creación de un guard global síncrono
+/**Creación de un guard global síncrono => En el commit hay error SINCRONO
  * 
  * https://router.vuejs.org/guide/advanced/navigation-guards.html
  * 
