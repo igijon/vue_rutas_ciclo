@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import isAuthenticatedGuard from './auth-guard'
 
 
 const routes = [
@@ -47,16 +48,25 @@ const routes = [
     {
         path: '/dbz',
         name: 'dbz',
+        beforeEnter: [
+            isAuthenticatedGuard
+        ],
         component: () => import(/* webpackChunkName: "DBZLayout"*/ '@/modules/dbz/layouts/DragonBallLayout'),
         children: [
             {
                 path: 'characters', 
                 name: 'dbz-characters',
+                beforeEnter: [
+                    isAuthenticatedGuard
+                ],
                 component: () => import(/* webpackChunkName: "DbzCharacters"*/ '@/modules/dbz/pages/Characters') //Lazy Load
             },
             {
                 path: 'about',
                 name: 'dbz-about', 
+                beforeEnter: [
+                    isAuthenticatedGuard
+                ],
                 component: () => import(/* webpackChunkName: "DbzAboutPage"*/ '@/modules/dbz/pages/About') //Lazy Load
             },
             {
@@ -79,5 +89,8 @@ const router = createRouter({
     history: createWebHashHistory(), //Cómo quiero que maneje la historia
     routes
 })
+
+
+
 
 export default router
