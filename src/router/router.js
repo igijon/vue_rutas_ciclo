@@ -3,6 +3,12 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
     {
+        path: '/',
+        redirect: '/home'
+        /*Aunque haga esto si pongo la / y doy intro no coge la clase, no se pone
+        el link verde como activo */
+    },
+    {
         path: '/home', 
         component: () => import(/* webpackChunkName: "ListPage"*/ '../modules/pokemon/pages/ListPage') //Lazy Load
     },
