@@ -56,11 +56,17 @@ const routes = [
             {
                 path: 'characters', 
                 name: 'dbz-characters',
+                beforeEnter: [
+                    isAuthenticatedGuard
+                ],
                 component: () => import(/* webpackChunkName: "DbzCharacters"*/ '@/modules/dbz/pages/Characters') //Lazy Load
             },
             {
                 path: 'about',
                 name: 'dbz-about', 
+                beforeEnter: [
+                    isAuthenticatedGuard
+                ],
                 component: () => import(/* webpackChunkName: "DbzAboutPage"*/ '@/modules/dbz/pages/About') //Lazy Load
             },
             {
